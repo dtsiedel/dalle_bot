@@ -3,7 +3,7 @@ import random
 import requests
 
 # Non-private I think
-GROUP_ID = 87556558
+GROUP_ID = 42846333
 
 var = 'GROUPME_BOT_TOKEN'
 ip_var = 'MY_IP'
