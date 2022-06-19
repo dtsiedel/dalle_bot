@@ -2,13 +2,13 @@ import os
 import requests
 
 
-class OopsieError(Exception):
+class FetchError(Exception):
     pass
 
 var = 'DALLE_SERVER_ADDRESS'
 server = os.getenv(var)
 if not server:
-    raise OopsieError(f'No env variable {var}.')
+    raise FetchError(f'No env variable {var}.')
 url = f'{server}/dalle'
 
 print(f'Requesting from {url}')
@@ -24,5 +24,5 @@ print(images)
 
 import base64
 for i, image in enumerate(images):
-    with open(f'image_{i}', 'wb') as fh:
+    with open(f'image_{i}.png', 'wb') as fh:
         fh.write(base64.b64decode(image))
